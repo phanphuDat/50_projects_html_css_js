@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+:root {
+    --pink-color: #e26e70;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(#5f964e,
+            rgb(172, 196, 133), rgb(83, 79, 40));
+    font-family: "Poppins";
+}
+
+body>button {
+    border-radius: 10px;
+    border: solid 1px #5f330e;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    font-size: 18px;
+}
+
+body>button:hover {
+    background: #8a881f;
+    border: none;
+    outline: none;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+}
+
+.modal__inner {
+    position: relative;
+    top: 15%;
+    max-width: 450px;
+    min-height: 180px;
+    background: #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    box-shadow: 5px 5px 15px 15px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    animation: modalShow 0.5s linear;
+}
+
+.modal__inner--body,
+.modal__inner--header {
+    padding: 10px 5px;
+}
+
+.modal__inner--header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    background: var(--pink-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.modal__inner--header span {
+    transform: translateX(-5px) scale(1.5);
+    transition: 0.3s;
+    cursor: pointer;
+    color: #353535;
+}
+
+.modal__inner--header span:hover {
+    color: Red;
+    transform: translateX(-5px) scale(1.6);
+}
+
+.modal__inner--body {
+    line-height: 1.6;
+}
+
+.modal__inner--body h2 {
+    color:  var(--pink-color);
+}
+
+.modal__inner--footer {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.modal__inner--footer button {
+    padding: 5px 20px;
+    background: var(--pink-color);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes modalShow {
+    from{
+        top: 0;
+        opacity: 0;
+    }
+    to{
+        top: 15%;
+        opacity: 1;
+    }
+}
